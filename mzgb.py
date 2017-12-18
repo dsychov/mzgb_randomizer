@@ -17,9 +17,9 @@ def sort_players():
             group = group_participants[0]
             decision = god_desire.randint(0, 1)
             if len(teams[decision]) < (max_amount_in_one_team -1):
-                map(lambda x: teams[decision].append(x), group)
+                teams[decision].extend(group)
             else:
-                map(lambda x: teams[not decision].append(x), group)
+                teams[decision].extend(group)
             participants.remove(group)
         else:
             participant = participants[0]
